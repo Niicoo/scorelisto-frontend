@@ -1,0 +1,319 @@
+<div class="container-fluid">
+	<form [formGroup]="ParametersForm">
+		<div class="row">
+			<div class="col form-group">
+				<label for="rythmnameInput">Name</label>
+				<input id="rythmnameInput" class="form-control" type="text" placeholder="New parameter name" required formControlName="name">
+			</div>
+			<div *ngIf="ParametersForm.controls.name.invalid && (ParametersForm.controls.name.dirty || ParametersForm.controls.name.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.name.errors.required">
+					Name is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.name.errors.pattern">
+					Name must be between 4 and 32 characters long. Only letters, numbers and whitespaces. Cannot start of end with whitespaces.
+				</div>
+			</div>
+		</div>
+		<div class="row separator_row"></div>
+		<div class="row justify-content-between">
+			<div class="col form-group text-center">
+				<label for="BPMMAX_Input">Maximum Beat Per Minute</label>
+				<input id="BPMMAX_Input" class="form-control" type="text" placeholder="BPM Max" required formControlName="bpm_max">
+			</div>
+			<div *ngIf="ParametersForm.controls.bpm_max.invalid && (ParametersForm.controls.bpm_max.dirty || ParametersForm.controls.bpm_max.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.bpm_max.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.bpm_max.errors.min">
+					Minimum value: 40.
+				</div>
+				<div *ngIf="ParametersForm.controls.bpm_max.errors.max">
+					Maximum value: 200.
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="BPMMIN_Input">Minimum Beat Per Minute</label>
+				<input id="BPMMIN_Input" class="form-control" type="text" placeholder="BPM Min" required formControlName="bpm_min">
+			</div>
+			<div *ngIf="ParametersForm.controls.bpm_min.invalid && (ParametersForm.controls.bpm_min.dirty || ParametersForm.controls.bpm_min.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.bpm_min.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.bpm_min.errors.min">
+					Minimum value: 40
+				</div>
+				<div *ngIf="ParametersForm.controls.bpm_min.errors.max">
+					Maximum value: 200
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="MAXDG_Input">Maximum delay gap</label>
+				<input id="MAXDG_Input" class="form-control" type="text" placeholder="Max delay gap " required formControlName="maxdelayvar">
+			</div>
+			<div *ngIf="ParametersForm.controls.maxdelayvar.invalid && (ParametersForm.controls.maxdelayvar.dirty || ParametersForm.controls.maxdelayvar.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.maxdelayvar.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.maxdelayvar.errors.min">
+					Minimum value: 0.001
+				</div>
+				<div *ngIf="ParametersForm.controls.maxdelayvar.errors.max">
+					Maximum value: 1
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="MAXCE_Input">Maximum combination error</label>
+				<input id="MAXCE_Input" class="form-control" type="text" placeholder="Maximum combination error" required formControlName="errormax">
+			</div>
+			<div *ngIf="ParametersForm.controls.errormax.invalid && (ParametersForm.controls.errormax.dirty || ParametersForm.controls.errormax.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.errormax.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.errormax.errors.min">
+					Minimum value: 0.001
+				</div>
+				<div *ngIf="ParametersForm.controls.errormax.errors.max">
+					Maximum value: 100
+				</div>
+			</div>
+
+		</div>
+		<div class="row separator_row"></div>
+
+		<div class="row justify-content-center">
+			<h4>Combinations of notes allowed:</h4>
+		</div>
+
+		<div class="row combination_title">
+			<h5>Combinations composed of 1 note/rest:</h5>
+		</div>
+		<div class="row">
+
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onenoteonebeat" id="onenoteonebeat">
+			  <label id="img_onenoteonebeat" class="form-check-label" for="onenoteonebeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onenotetwobeat" id="onenotetwobeat">
+			  <label id="img_onenotetwobeat" class="form-check-label" for="onenotetwobeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onenotethreebeat" id="onenotethreebeat">
+			  <label id="img_onenotethreebeat" class="form-check-label" for="onenotethreebeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onenotefourbeat" id="onenotefourbeat">
+			  <label id="img_onenotefourbeat" class="form-check-label" for="onenotefourbeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onenotefivebeat" id="onenotefivebeat">
+			  <label id="img_onenotefivebeat" class="form-check-label" for="onenotefivebeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onenotesixbeat" id="onenotesixbeat">
+			  <label id="img_onenotesixbeat" class="form-check-label" for="onenotesixbeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onenotesevenbeat" id="onenotesevenbeat">
+			  <label id="img_onenotesevenbeat" class="form-check-label" for="onenotesevenbeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onenoteeightbeat" id="onenoteeightbeat">
+			  <label id="img_onenoteeightbeat" class="form-check-label" for="onenoteeightbeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onerestonebeat" id="onerestonebeat">
+			  <label id="img_onerestonebeat" class="form-check-label" for="onerestonebeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="oneresttwobeat" id="oneresttwobeat">
+			  <label id="img_oneresttwobeat" class="form-check-label" for="oneresttwobeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onerestthreebeat" id="onerestthreebeat">
+			  <label id="img_onerestthreebeat" class="form-check-label" for="onerestthreebeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onerestfourbeat" id="onerestfourbeat">
+			  <label id="img_onerestfourbeat" class="form-check-label" for="onerestfourbeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onerestfivebeat" id="onerestfivebeat">
+			  <label id="img_onerestfivebeat" class="form-check-label" for="onerestfivebeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onerestsixbeat" id="onerestsixbeat">
+			  <label id="img_onerestsixbeat" class="form-check-label" for="onerestsixbeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="onerestsevenbeat" id="onerestsevenbeat">
+			  <label id="img_onerestsevenbeat" class="form-check-label" for="onerestsevenbeat"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="oneresteightbeat" id="oneresteightbeat">
+			  <label id="img_oneresteightbeat" class="form-check-label" for="oneresteightbeat"></label>
+			</div>
+		</div>
+		<div class="row combination_title">
+			<h5>Combinations composed of 2 notes/rests:</h5>
+		</div>
+		<div class="row">
+
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="en_en" id="en_en">
+			  <label id="img_en_en" class="form-check-label" for="en_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="er_en" id="er_en">
+			  <label id="img_er_en" class="form-check-label" for="er_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="en_er" id="en_er">
+			  <label id="img_en_er" class="form-check-label" for="en_er"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="den_sn" id="den_sn">
+			  <label id="img_den_sn" class="form-check-label" for="den_sn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="sn_den" id="sn_den">
+			  <label id="img_sn_den" class="form-check-label" for="sn_den"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="dqn_en" id="dqn_en">
+			  <label id="img_dqn_en" class="form-check-label" for="dqn_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="qr_er_en" id="qr_er_en">
+			  <label id="img_qr_er_en" class="form-check-label" for="qr_er_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="dqn_er" id="dqn_er">
+			  <label id="img_dqn_er" class="form-check-label" for="dqn_er"></label>
+			</div>
+		</div>
+		<div class="row combination_title">
+			<h5>Combinations composed of 3 notes/rests:</h5>
+		</div>
+		<div class="row">
+
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="en_en_qn" id="en_en_qn">
+			  <label id="img_en_en_qn" class="form-check-label" for="en_en_qn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="qn_dqn_en" id="qn_dqn_en">
+			  <label id="img_qn_dqn_en" class="form-check-label" for="qn_dqn_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="qr_qr_er_en" id="qr_qr_er_en">
+			  <label id="img_qr_qr_er_en" class="form-check-label" for="qr_qr_er_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="qn_dqn_er" id="qn_dqn_er">
+			  <label id="img_qn_dqn_er" class="form-check-label" for="qn_dqn_er"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="en_en_hn" id="en_en_hn">
+			  <label id="img_en_en_hn" class="form-check-label" for="en_en_hn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="hn_dqn_en" id="hn_dqn_en">
+			  <label id="img_hn_dqn_en" class="form-check-label" for="hn_dqn_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="qr_qr_qr_er_en" id="qr_qr_qr_er_en">
+			  <label id="img_qr_qr_qr_er_en" class="form-check-label" for="qr_qr_qr_er_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="hn_dqn_er" id="hn_dqn_er">
+			  <label id="img_hn_dqn_er" class="form-check-label" for="hn_dqn_er"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="en_en_dhn" id="en_en_dhn">
+			  <label id="img_en_en_dhn" class="form-check-label" for="en_en_dhn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="en_sn_sn" id="en_sn_sn">
+			  <label id="img_en_sn_sn" class="form-check-label" for="en_sn_sn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="er_sn_sn" id="er_sn_sn">
+			  <label id="img_er_sn_sn" class="form-check-label" for="er_sn_sn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="sn_sn_en" id="sn_sn_en">
+			  <label id="img_sn_sn_en" class="form-check-label" for="sn_sn_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="sn_sn_er" id="sn_sn_er">
+			  <label id="img_sn_sn_er" class="form-check-label" for="sn_sn_er"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="sn_en_sn" id="sn_en_sn">
+			  <label id="img_sn_en_sn" class="form-check-label" for="sn_en_sn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="t_en_en_en" id="t_en_en_en">
+			  <label id="img_t_en_en_en" class="form-check-label" for="t_en_en_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="t_en_den_sn" id="t_en_den_sn">
+			  <label id="img_t_en_den_sn" class="form-check-label" for="t_en_den_sn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="t_en_sn_den" id="t_en_sn_den">
+			  <label id="img_t_en_sn_den" class="form-check-label" for="t_en_sn_den"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="t_sn_en_den" id="t_sn_en_den">
+			  <label id="img_t_sn_en_den" class="form-check-label" for="t_sn_en_den"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="t_sn_den_en" id="t_sn_den_en">
+			  <label id="img_t_sn_den_en" class="form-check-label" for="t_sn_den_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="t_den_en_sn" id="t_den_en_sn">
+			  <label id="img_t_den_en_sn" class="form-check-label" for="t_den_en_sn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="t_den_sn_en" id="t_den_sn_en">
+			  <label id="img_t_den_sn_en" class="form-check-label" for="t_den_sn_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="en_qn_en" id="en_qn_en">
+			  <label id="img_en_qn_en" class="form-check-label" for="en_qn_en"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="dqn_sn_sn" id="dqn_sn_sn">
+			  <label id="img_dqn_sn_sn" class="form-check-label" for="dqn_sn_sn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="qn_dqn_sn_sn" id="qn_dqn_sn_sn">
+			  <label id="img_qn_dqn_sn_sn" class="form-check-label" for="qn_dqn_sn_sn"></label>
+			</div>
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="hn_dqn_sn_sn" id="hn_dqn_sn_sn">
+			  <label id="img_hn_dqn_sn_sn" class="form-check-label" for="hn_dqn_sn_sn"></label>
+			</div>
+		</div>
+		<div class="row combination_title">
+			<h5>Combinations composed of 4 notes/rests:</h5>
+		</div>
+		<div class="row">
+			<div class="form-check">
+			  <input type="checkbox" class="form-check-input" formControlName="sn_sn_sn_sn" id="sn_sn_sn_sn">
+			  <label id="img_sn_sn_sn_sn" class="form-check-label" for="sn_sn_sn_sn"></label>
+			</div>
+		</div>
+	</form>
+</div>

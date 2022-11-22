@@ -1,0 +1,60 @@
+#StepSelector {
+	height:2rem;
+	margin-top:2rem;
+	margin-bottom:2rem;
+	background-color:rgba(0,0,0,0.5);
+}
+
+#col_pitch, #col_step, #col_rythm {
+	padding-left:0;
+	padding-right:0;
+	padding-top:0.3rem;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+ /*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+	#StepSelector #col_pitch span {
+		display:none;
+	}
+	#StepSelector #col_step span {
+		display:none;
+	}
+	#StepSelector #col_rythm span {
+		display:none;
+	}
+	#StepSelector #col_pitch:after {
+		content:"Step 1";
+	}
+	#StepSelector #col_step:after {
+		content:"Step 2";
+	}
+	#StepSelector #col_rythm:after {
+		content:"Step 3";
+	}
+}
+
+
+@media (min-width: 992px) {
+	#StepSelector #col_pitch:after {
+		content:"Step 1: Pitch Detection";
+	}
+	#StepSelector #col_step:after {
+		content:"Step 2: Step Detection";
+	}
+	#StepSelector #col_rythm:after {
+		content:"Step 3: Rythm Detection";
+	}
+}
+
+
+
+@keyframes anim_background {
+  0%    { background-color:var(--theme-color-primary); }
+  50%  { background-color:var(--theme-color-secondary); }
+  100%  { background-color:var(--theme-color-primary); }
+}
+.currentStep {
+	animation: anim_background 2s linear infinite;
+}

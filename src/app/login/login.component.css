@@ -1,0 +1,61 @@
+#img_favicon img {
+	background:linear-gradient(30deg, var(--theme-color-primary), var(--theme-color-secondary));
+	border-radius: 0.5rem;
+}
+
+form {
+	padding-top:2rem;
+}
+
+.btn-form {
+	background-color:rgba(255,255,255,0.25);
+	width:50%;
+}
+
+#btn-return {
+	background-color:rgba(255,255,255,0.25);
+	width:10%;
+}
+
+.btn:hover {
+	background:linear-gradient(30deg, var(--theme-color-primary), var(--theme-color-secondary));
+}
+
+#logindiv {
+	background-color:var(--background-color-secondary);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	padding:0;
+}
+
+.nav-item {
+	cursor: pointer;
+}
+
+.nav-link {
+	font-weight: bold;
+}
+
+.active {
+	background-color:var(--theme-color-primary);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+}
+/* LOGIN */
+
+/* FORGOT PASSWORD */
+#link_pw_forgot {
+	background-color:var(--background-color-secondary);
+	color:var(--text-color);
+	border:none;
+	text-decoration: underline;
+	cursor: pointer;
+}
+/* REGISTER */
+
+/* REGISTRATION OK */
+.inline-link {
+	cursor:pointer;
+	text-decoration: underline;
+	font-weight: bold;
+	color:blue;
+}
+

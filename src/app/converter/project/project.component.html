@@ -1,0 +1,141 @@
+
+<!-- Project Name -->
+<form [formGroup]="ProjectNameForm" (ngSubmit)="onSubmitNewProjectName()">
+	<div class="row form-group text-center mb-0">
+		<input id="projectnameInput" class="form-control" type="text" value="{{project.name}}" placeholder="project_name" required formControlName="name" (input)="projectnamechange($event)">
+	</div>
+	<div class="row mt-0 mb-3 justify-content-center">
+		<button id="save_button" type="submit" [disabled]="!ProjectNameForm.valid" [class.HiddenButton]="ProjectNameMatchInputForm">Save change</button>
+	</div>
+	<div class="row justify-content-center text-center">
+		<p>Created on: {{project.date_created}}</p>
+	</div>
+	<div class="row justify-content-center text-center">
+		<p>Instrument: {{project.instrument}}</p>
+	</div>
+</form>
+
+
+<!-- Project State -->
+<section id="project_state_section" class="container">
+	<h3>Progression</h3>
+	<div class="container">
+		<div class="row state-row flex-column-reverse flex-md-row justify-content-center">
+			<div id="col-start" class="col-12 col-md-1" [class.stateCompleted]="true" [class.currentState]="project.state == 0"></div>
+			<div id="col-pitch" class="col-12 col-md-4" [class.stateCompleted]="project.state > 0" [class.currentState]="project.state == 1"></div>
+			<div id="col-step" class="col-12 col-md-4" [class.stateCompleted]="project.state > 1" [class.currentState]="project.state == 2"></div>
+			<div id="col-rythm" class="col-12 col-md-3" [class.stateCompleted]="project.state > 2"></div>
+		</div>
+	</div>
+	<div>
+		state:
+		<div *ngIf="project.state == 0" style="display:inline-block">
+			Sound uploaded
+		</div>
+		<div *ngIf="project.state == 1" style="display:inline-block">
+			Pitch detected
+		</div>
+		<div *ngIf="project.state == 2" style="display:inline-block">
+			Step detected
+		</div>
+		<div *ngIf="project.state == 3" style="display:inline-block">
+			Finished
+		</div>
+	</div>
+</section>
+
+
+<!-- Conversion progression -->
+<section id="progression_section" class="container">
+	<h3>Work in progress:</h3>
+	<div class="progression-bar container" [class.ConversionRunning]="isConversionRunning">
+	  <app-progression-bar></app-progression-bar>
+	</div>
+	<div *ngIf="!isConversionRunning" class="container-fluid DivNotReady">
+		<div class="row text-center justify-content-center">
+			<h4>None work in progress for this project</h4>
+		</div>
+	</div>
+</section>
+
+
+<!-- Download scores -->
+<section id="download_scores_section" class="container">
+	<h3>Download Scores:</h3>
+	<div class="row">
+		<div class="col text-center">
+			<button class="DownloadScoreButton" [disabled]="this.project.state < 3" (click)="download_XML()">MusicXML (.xml)</button>
+		</div>
+		<div class="col text-center">
+			<button class="DownloadScoreButton" [disabled]="this.project.state < 3" (click)="download_MIDI()">Midi (.mid)</button>
+		</div>
+	</div>
+</section>
+
+
+<!-- alternative downloads -->
+<section id="download_extras_section" class="container">
+	<h3>Extra Downloads:</h3>
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-4 text-center">
+			<button class="DownloadExtraButton" [disabled]="this.project.state < 1" (click)="download_PITCH()">Pitch (.txt)</button>
+		</div>
+		<div class="col-12 col-md-4 text-center">
+			<button class="DownloadExtraButton" [disabled]="this.project.state < 3" (click)="download_MIDI_NORYTHM()">Midi [No Rythm] (.mid)</button>
+		</div>
+		<div class="col-12 col-md-4 text-center">
+			<button class="DownloadExtraButton" (click)="download_AUDIO()">Source audio (.wav)</button>
+		</div>
+	</div>
+</section>
+
+
+
+<!-- Showing score -->
+<section id="score_section" class="container">
+	<h3>Music XML score overview:</h3>
+	<app-score-printer></app-score-printer>
+	<div class="container-fluid DivNotReady" *ngIf="project.state < 3">
+		<div class="row text-center justify-content-center">
+			<h4>Score not ready</h4>
+		</div>
+	</div>
+</section>
+
+
+
+<!-- Convert again -->
+<section id="converter_section" class="container">
+	<h3>Conversion:</h3>
+	<div class="row">
+		<!-- Continue conversion -->
+		<div class="col-12 col-md-4 text-center">
+			<button class="button_conversion" routerLink="advanced-converter">Continue</button>
+		</div>
+		<!-- Advanced converter -->
+		<div class="col-12 col-md-4 text-center">
+			<button class="button_conversion" routerLink="advanced-converter">Advanced Converter</button>
+		</div>
+		<!-- Direct conversion -->
+		<div class="col-12 col-md-4 text-center">
+			<button class="button_conversion" [disabled]="!ParameterForm.valid || isConversionRunning" (click)="onSubmitConversion()">Direct conversion</button>
+			<div>Parameter:</div>
+			<div>
+
+				<select id="select_direct_parameter" (change)="changeParameter($event.target.value)">
+					<option value="-1">Select a parameter</option>
+					<option value="{{param.id}}" *ngFor="let param of ListParameters">{{param.name}}</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Delete Project -->
+<section id="delete_section" class="container">
+	<h3>Delete project:</h3>
+	<div class="row justify-content-center">
+		<button id="delete_button" (click)="deleteProject()">Delete this project</button>
+	</div>
+</section>

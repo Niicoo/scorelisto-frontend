@@ -1,0 +1,68 @@
+/* Navigation bar*/
+
+.navbar {
+    background-color:var(--background-color-secondary);
+}
+#navbarSupportedContent a{
+    color:var(--text-color);
+}
+
+#navbarSupportedContent a:hover{
+    color:var(--theme-color-primary);
+}
+
+#img_favicon{
+	margin-right:0.5rem;
+    background:linear-gradient(30deg, var(--theme-color-primary), var(--theme-color-secondary));
+    border-radius: 0.5rem;
+}
+
+.btn:hover {
+	background:linear-gradient(30deg, var(--theme-color-primary), var(--theme-color-secondary));
+}
+
+.nav-item{
+    text-align: center;
+    border-bottom: solid 0.25rem var(--background-color-primary);
+}
+
+.nav-link:hover{
+    border-color: var(--theme-color-primary);
+}
+
+#dropdown-basic {
+    background-color:var(--background-color-secondary);
+}
+.dropdown-item:hover{
+	background-color:var(--background-color-secondary);
+}
+#AccountDropDown {
+    background-color:var(--background-color-secondary);
+    cursor:pointer;
+}
+
+@media only screen and (max-width:992px){
+    .dropdown-menu{
+        display: block;
+        position: static;
+        background-color:transparent;
+        border:0 none;
+        box-shadow:none;
+        margin-top:0;
+        position:static;
+        width:100%;
+    }
+}
+
+
+/* Footer*/
+footer {
+    padding-top:1rem;
+    padding-bottom:1rem;
+    background-color:rgba(255,255,255,0.25);
+    color:var(--text-color);
+}
+footer a {
+    color:var(--text-color); 
+}
+

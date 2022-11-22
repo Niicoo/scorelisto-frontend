@@ -1,0 +1,96 @@
+#recording_zone {
+	min-height:15rem;
+	background-color:rgba(0,0,0,0.5);
+	position:relative;
+}
+#div_controls, #div_download {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	margin-bottom:0.5rem;
+}
+#div_download {
+	text-align:left;
+}
+#div_controls {
+	text-align:center;
+}
+
+button {
+	margin:0.75rem;
+	background-size: contain;
+	border:none;
+	position:relative;
+	z-index:10;
+}
+#secondsPrint {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	vertical-align: middle;
+	color:white;
+	margin-left:3rem;
+	padding-top:0.5rem;
+	font-weight: bold;
+	z-index:10;
+}
+
+#start_button {
+	height:4rem;
+	width:4rem;
+}
+#reset_button, #download_button, #stop_button, #play_button, #pause_button{
+	height:2rem;
+	width:2rem;
+}
+#start_button {
+	background:transparent url('/assets/img/record_white.svg') center center no-repeat;
+}
+#play_button {
+	background:transparent url('/assets/img/play_white.svg') center center no-repeat;
+}
+#pause_button {
+	background:transparent url('/assets/img/pause_white.svg') center center no-repeat;
+}
+#stop_button {
+	background:transparent url('/assets/img/stop_white.svg') center center no-repeat;
+}
+#reset_button {
+	background:transparent url('/assets/img/reload_white.svg') center center no-repeat;
+}
+#download_button {
+	background:transparent url('/assets/img/download_white.svg') center center no-repeat;
+}
+
+
+#start_button:hover {
+	background:transparent url('/assets/img/record_colored.svg') center center no-repeat;
+}
+#play_button:hover {
+	background:transparent url('/assets/img/play_colored.svg') center center no-repeat;
+}
+#pause_button:hover {
+	background:transparent url('/assets/img/pause_colored.svg') center center no-repeat;
+}
+#stop_button:hover {
+	background:transparent url('/assets/img/stop_colored.svg') center center no-repeat;
+}
+#reset_button:hover {
+	background:transparent url('/assets/img/reload_colored.svg') center center no-repeat;
+}
+#download_button:hover {
+	background:transparent url('/assets/img/download_colored.svg') center center no-repeat;
+}
+
+canvas {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.DivHidden {
+	display:none;
+}

@@ -1,0 +1,63 @@
+#contactdiv {
+	color:var(--text-color);
+	padding-top:2rem;
+	padding-bottom:2rem;
+}
+#ContactMainDiv {
+	background-color:var(--background-color-secondary);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	color:var(--text-color);
+	padding-top:2rem;
+	padding-bottom:2rem;
+	margin-top:2rem;
+	margin-bottom:2rem;
+}
+
+
+.btn {
+	background-color:rgba(255,255,255,0.25);
+}
+
+.btn:hover {
+	background:linear-gradient(30deg, var(--theme-color-primary), var(--theme-color-secondary));
+}
+
+#notifDiv {
+	margin-top:2rem;
+}
+#ErrorMessage {
+	color:red;
+	font-weight: bold;
+}
+#SuccessMessage {
+	color:green;
+	font-weight: bold;
+}
+
+/*
+@keyframes anim_letter {
+  0%    {
+  }
+  50%  {
+  	transform: translate(50px, -100px) rotate(100deg) scale(5);
+  }
+  100%  {
+  	transform: translate(500px, -100px) rotateX(-50deg);
+  }
+}
+
+.btn:hover #send_letter{
+	animation: anim_letter 5s linear infinite;
+}
+*/
+
+/*contrat: 142000400
+N°reference: 0862 17 9995 07267 N
+
+1er incident:
+10/11/2016
+16 7296 08388 Y
+
+2e incident: 
+6/01/2017
+DY 693 LC - AJACCIO AUTO*/

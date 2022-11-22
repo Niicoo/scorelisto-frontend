@@ -1,0 +1,11 @@
+progressbar {
+	height:2rem;
+}
+.statusSuccess {
+	color:green;
+	font-weight: bold;
+}
+.statusError {
+	color:red;
+	font-weight: bold;
+}

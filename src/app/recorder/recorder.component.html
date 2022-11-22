@@ -1,0 +1,24 @@
+<div id="recording_zone" class="container-fluid">
+  <div id="div_controls">
+    <button id="reset_button" *ngIf="isSoundReady" (click)="clickResetButton()"></button>
+    <button id="start_button" *ngIf="!isSoundReady && !isRecording" (click)="clickStartButton()"></button>
+    <button id="play_button" *ngIf="isSoundReady && !wavesurfer.isPlaying()" (click)="wavesurfer.playPause()"></button>
+    <button id="pause_button" *ngIf="isSoundReady && wavesurfer.isPlaying()" (click)="wavesurfer.playPause()"></button>
+    <button id="stop_button" *ngIf="isRecording"(click)="clickStopButton()">
+      <div id="secondsPrint">{{minutes}}:{{seconds}}</div>
+    </button>
+    
+  </div>
+  <div *ngIf="isSoundReady" id="div_download">
+    <button id="download_button" (click)="clickDownloadButton()"></button>
+  </div>
+
+  <div [class.DivHidden]="isSoundReady">
+    <canvas id="canvastimeserie" width="1000" height="500"></canvas>
+  </div>
+
+  <div [class.DivHidden]="!isSoundReady">
+    <div id="waveform" (window:resize)="onResizeWaveform($event)"></div>
+  </div>
+
+</div>

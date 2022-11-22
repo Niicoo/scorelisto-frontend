@@ -1,0 +1,12 @@
+<p *ngIf="isValidationOk == null">
+	Your account is being validating, please wait...
+</p>
+
+<p *ngIf="isValidationOk == true">
+Your account is now activated ! 
+{{SecondsBeforeRedirecting}} seconds before redirecting to the login section
+</p>
+
+<p *ngIf="isValidationOk == false">
+  Validation failed
+</p>

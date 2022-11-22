@@ -1,0 +1,107 @@
+/* MAIN DIV */
+#maindiv {
+	background-color: var(--background-color-secondary);
+	margin:2rem;
+}
+.separator_row {
+	height:3px;
+	margin-top:1rem;
+	margin-bottom:1rem;
+	background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,0));
+}
+/* PARAMETERS */
+#ParameterDiv .row h3 {
+	padding:1.5rem;
+} 
+#convertButton {
+	padding:1rem;
+	margin:1rem;
+	min-height:2rem;
+	min-width:8rem;
+	border:none;
+	background-color:rgba(0,0,0,0.5);
+	color:var(--text-color);
+	font-weight: bold;
+}
+#convertButton:hover {
+	background-color:var(--theme-color-primary);
+}
+
+/* GRAPHICS */
+#waveform {
+	width:100%;
+}
+#button_play_pause {
+	margin-bottom:1rem;
+	border:none;
+	background-color:rgba(0,0,0,0.5);
+	color:var(--text-color);
+	font-weight: bold;
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+}
+#button_play_pause:hover {
+	background-color:var(--theme-color-primary);
+}
+.WaveFormhidden {
+	display:none;
+}
+#divAskWavForm {
+	margin:1rem;
+	min-height:5rem;
+	cursor:pointer;
+	position:relative;
+}
+#div_waveform, #div_download {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#div_waveform {
+	background-image:url('/assets/img/waveform_bw.png');
+	opacity:0.5;
+	background-size: cover;
+}
+#div_download {
+	background-image:url('/assets/img/download_black.svg');
+	background-size: contain;
+}
+#div_download:hover {
+	background-image:url('/assets/img/download_colored.svg');
+}
+#waveform {
+	margin:2rem;
+}
+
+#chart_row {
+	height:50rem;
+	margin:1rem;
+}
+#chart_row .col {
+	padding:0;
+}
+
+
+/* PROGRESS BAR*/
+#button_back, #button_next {
+	padding:1rem;
+	margin:2rem;
+	min-height:3rem;
+	min-width:10rem;
+	border:none;
+	background-color:rgba(0,0,0,0.5);
+	color:var(--text-color);
+	font-weight: bold;
+}
+#button_back:hover, #button_next:hover {
+	background-color:var(--theme-color-primary);
+}
+#button_back {
+	box-shadow: -5px 5px 10px rgba(0,0,0,1);
+}
+#button_next {
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+}

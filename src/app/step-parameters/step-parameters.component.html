@@ -1,0 +1,159 @@
+<div class="container-fluid">
+	<form [formGroup]="ParametersForm">
+		<div class="row">
+			<div class="col form-group">
+				<label for="stepnameInput">Name</label>
+				<input id="stepnameInput" class="form-control" type="text" placeholder="New parameter name" required formControlName="name">
+			</div>
+			<div *ngIf="ParametersForm.controls.name.invalid && (ParametersForm.controls.name.dirty || ParametersForm.controls.name.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.name.errors.required">
+					Name is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.name.errors.pattern">
+					Name must be between 4 and 32 characters long. Only letters, numbers and whitespaces. Cannot start of end with whitespaces.
+				</div>
+			</div>
+		</div>
+		<div class="row separator_row"></div>
+		<div class="row justify-content-between">
+
+			<div class="col form-group text-center">
+				<label for="MFS_Input">Median filter time size</label>
+				<input id="MFS_Input" class="form-control" type="text" placeholder="Median filter time size" required formControlName="medianfiltersize_ms">
+			</div>
+			<div *ngIf="ParametersForm.controls.medianfiltersize_ms.invalid && (ParametersForm.controls.medianfiltersize_ms.dirty || ParametersForm.controls.medianfiltersize_ms.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.medianfiltersize_ms.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.medianfiltersize_ms.errors.min">
+					Minimum value: 1 ms
+				</div>
+				<div *ngIf="ParametersForm.controls.medianfiltersize_ms.errors.max">
+					Maximum value: 1000 ms
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="TEON_Input">Threshold energy ON</label>
+				<input id="TEON_Input" class="form-control" type="text" placeholder="Threshold energy ON" required formControlName="thresholdenergyon_db">
+			</div>
+			<div *ngIf="ParametersForm.controls.thresholdenergyon_db.invalid && (ParametersForm.controls.thresholdenergyon_db.dirty || ParametersForm.controls.thresholdenergyon_db.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.thresholdenergyon_db.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.thresholdenergyon_db.errors.min">
+					Minimum value: 0.1 dB
+				</div>
+				<div *ngIf="ParametersForm.controls.thresholdenergyon_db.errors.max">
+					Maximum value: 200 dB
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="TEOFF_Input">Threshold energy OFF</label>
+				<input id="TEOFF_Input" class="form-control" type="text" placeholder="Threshold energy OFF" required formControlName="thresholdenergyoff_db">
+			</div>
+			<div *ngIf="ParametersForm.controls.thresholdenergyoff_db.invalid && (ParametersForm.controls.thresholdenergyoff_db.dirty || ParametersForm.controls.thresholdenergyoff_db.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.thresholdenergyoff_db.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.thresholdenergyoff_db.errors.min">
+					Minimum value: 0.1 dB
+				</div>
+				<div *ngIf="ParametersForm.controls.thresholdenergyoff_db.errors.max">
+					Maximum value: 200 dB
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="MPV_Input">Maximum pitch variation</label>
+				<input id="MPV_Input" class="form-control" type="text" placeholder="Maximum pitch variation" required formControlName="maxpitchvariation_st">
+			</div>
+			<div *ngIf="ParametersForm.controls.maxpitchvariation_st.invalid && (ParametersForm.controls.maxpitchvariation_st.dirty || ParametersForm.controls.maxpitchvariation_st.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.maxpitchvariation_st.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.maxpitchvariation_st.errors.min">
+					Minimum value: 0.01
+				</div>
+				<div *ngIf="ParametersForm.controls.maxpitchvariation_st.errors.max">
+					Maximum value: 12
+				</div>
+			</div>
+			
+			<div class="col form-group text-center">
+				<label for="MTS_Input">Minimum detection size</label>
+				<input id="MTS_Input" class="form-control" type="text" placeholder="Minimum detection size" required formControlName="minimumtimesize_ms">
+			</div>
+			<div *ngIf="ParametersForm.controls.minimumtimesize_ms.invalid && (ParametersForm.controls.minimumtimesize_ms.dirty || ParametersForm.controls.minimumtimesize_ms.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.minimumtimesize_ms.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.minimumtimesize_ms.errors.min">
+					Minimum value: 1 ms
+				</div>
+				<div *ngIf="ParametersForm.controls.minimumtimesize_ms.errors.max">
+					Maximum value: 1000 ms
+				</div>
+			</div>
+			
+			<div class="col form-group text-center">
+				<label for="MNS_Input">Minimum note size</label>
+				<input id="MNS_Input" class="form-control" type="text" placeholder="Minimum note size" required formControlName="minnotesize_ms">
+			</div>
+			<div *ngIf="ParametersForm.controls.minnotesize_ms.invalid && (ParametersForm.controls.minnotesize_ms.dirty || ParametersForm.controls.minnotesize_ms.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.minnotesize_ms.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.minnotesize_ms.errors.min">
+					Minimum value: 1 ms
+				</div>
+				<div *ngIf="ParametersForm.controls.minnotesize_ms.errors.max">
+					Maximum value: 1000 ms
+				</div>
+			</div>
+			
+			<div class="col form-group text-center">
+				<label for="MND_Input">Minimum pitch gap</label>
+				<input id="MND_Input" class="form-control" type="text" placeholder="Minimum pitch gap" required formControlName="minnotediff_st">
+			</div>
+			<div *ngIf="ParametersForm.controls.minnotediff_st.invalid && (ParametersForm.controls.minnotediff_st.dirty || ParametersForm.controls.minnotediff_st.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.minnotediff_st.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.minnotediff_st.errors.min">
+					Minimum value: 0.001
+				</div>
+				<div *ngIf="ParametersForm.controls.minnotediff_st.errors.max">
+					Maximum value: 12
+				</div>
+			</div>
+			
+			<div class="col form-group text-center">
+				<label for="LMHG_Input">Width at mid height gaussian</label>
+				<input id="LMHG_Input" class="form-control" type="text" placeholder="Width at mid height gaussian" required formControlName="lmhgaussian_st">
+			</div>
+			<div *ngIf="ParametersForm.controls.lmhgaussian_st.invalid && (ParametersForm.controls.lmhgaussian_st.dirty || ParametersForm.controls.lmhgaussian_st.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.lmhgaussian_st.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.lmhgaussian_st.errors.min">
+					Minimum value: 0.001
+				</div>
+				<div *ngIf="ParametersForm.controls.lmhgaussian_st.errors.max">
+					Maximum value: 12
+				</div>
+			</div>
+			
+		</div>
+	</form>
+</div>

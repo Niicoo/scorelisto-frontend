@@ -1,0 +1,100 @@
+<div id="contactdiv" class="container">
+	<div id="TitleContact" class="row justify-content-center">
+		<h1>Get in Touch with us</h1>
+		<h3>You can contact us by email at <a href="mailto:contact@scorelisto.com">contact@scorelisto.com </a>
+				or by using our contact form:
+		</h3>
+	</div>
+
+	<div id="ContactMainDiv" class="row">
+		<div class="container">
+			<div [class.blurred]="WaitingForAnAnswer">
+				<div class="ContentToBlurWhenWaiting">
+					<form [formGroup]="ContactForm" (ngSubmit)="onSubmitContact()">
+						<div id="fooDiv">
+							<label for="foo">Leave this field blank</label>
+							<input type="text" name="foo" id="foo">
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="InputNameForm">Your name</label>
+									<input type="text" class="form-control" formControlName="name" id="InputNameForm" placeholder=" Enter Name">
+								</div>
+
+								<div *ngIf="ContactForm.controls.name.invalid && (ContactForm.controls.name.dirty || ContactForm.controls.name.touched)"
+									class="alert alert-danger">
+									<div *ngIf="ContactForm.controls.name.errors.required">
+										Name is required.
+									</div>
+									<div *ngIf="ContactForm.controls.name.errors.pattern">
+										Name must be between 4 and 32 characters long. Only letters, numbers and whitespaces. Cannot start of end with whitespaces.
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="InputEmailForm">Email Address</label>
+									<input type="email" class="form-control" formControlName="email" id="InputEmailForm" placeholder=" Enter Email id">
+								</div>
+
+								<div *ngIf="ContactForm.controls.email.invalid && (ContactForm.controls.email.dirty || ContactForm.controls.email.touched)"
+									class="alert alert-danger">
+									<div *ngIf="ContactForm.controls.email.errors.required">
+										Email is required.
+									</div>
+									<div *ngIf="ContactForm.controls.email.errors.email">
+										Inavlid Email adress.
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="InputPhoneForm">Mobile No.</label>
+									<input type="tel" class="form-control" formControlName="phone" id="InputPhoneForm" placeholder=" Enter Mobile no.">
+								</div>
+								<div *ngIf="ContactForm.controls.phone.invalid && (ContactForm.controls.phone.dirty || ContactForm.controls.phone.touched)"
+									class="alert alert-danger">
+									<div *ngIf="ContactForm.controls.phone.errors.pattern">
+										Maxium length: 100 characters.
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+								  	<label for ="InputMessageForm">Message</label>
+								  	<textarea  class="form-control" formControlName="body" id="InputMessageForm" placeholder="Enter Your Message" rows="8"></textarea>
+								</div>
+
+								<div *ngIf="ContactForm.controls.body.invalid && (ContactForm.controls.body.dirty || ContactForm.controls.body.touched)"
+									class="alert alert-danger">
+									<div *ngIf="ContactForm.controls.body.errors.required">
+										Message is required.
+									</div>
+									<div *ngIf="ContactForm.controls.body.errors.pattern">
+										Message must be between 8 and 5000 characters long.
+									</div>
+								</div>
+
+					  			<div>
+					  				<button type="submit" class="btn btn-default">
+					  					<div>
+					  						<div id="send_letter" class="fa fa-paper-plane" aria-hidden="true"></div>
+					  						Send Message
+					  					</div>
+					  				</button>
+					  			</div>
+							</div>
+						</div>
+						<div id="notifDiv" class="row justify-content-center">
+							<p *ngIf="MessageError" id="ErrorMessage">The message could not be sent, please try again later or use the email: <a href="mailto:contact@scorelisto.com">contact@scorelisto.com </a></p>
+							<p *ngIf="MessageSuccess" id="SuccessMessage">Message sent ! We'll try to answer as quick as possible.</p>
+						</div>
+					</form>
+				</div>
+				<div class="LoadingToPlotWhenWaiting">
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

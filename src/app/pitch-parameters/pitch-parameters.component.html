@@ -1,0 +1,142 @@
+<div class="container-fluid">
+	<form [formGroup]="ParametersForm">
+		<div class="row">
+			<div class="col form-group">
+				<label for="pitchnameInput">Name</label>
+				<input id="pitchnameInput" class="form-control" type="text" placeholder="New parameter name" required formControlName="name">
+			</div>
+			<div *ngIf="ParametersForm.controls.name.invalid && (ParametersForm.controls.name.dirty || ParametersForm.controls.name.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.name.errors.required">
+					Name is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.name.errors.pattern">
+					Name must be between 4 and 32 characters long. Only letters, numbers and whitespaces. Cannot start of end with whitespaces.
+				</div>
+			</div>
+		</div>
+		<div class="row separator_row"></div>
+		<div class="row justify-content-between">
+
+			<div class="col form-group text-center">
+				<label for="WTS_Input">Window time size [ms]</label>
+				<input id="WTS_Input" class="form-control" type="text" placeholder="Window time size" required formControlName="windowtimesize_ms">
+			</div>
+			<div *ngIf="ParametersForm.controls.windowtimesize_ms.invalid && (ParametersForm.controls.windowtimesize_ms.dirty || ParametersForm.controls.windowtimesize_ms.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.windowtimesize_ms.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.windowtimesize_ms.errors.min">
+					Minimum value: 0.1 ms.
+				</div>
+				<div *ngIf="ParametersForm.controls.windowtimesize_ms.errors.max">
+					Maximum value: 1000 ms.
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="SP_Input">Sampling period [ms]</label>
+				<input id="SP_Input" class="form-control" type="text" placeholder="Sampling period" required formControlName="sonogramperiod_ms">
+			</div>
+			<div *ngIf="ParametersForm.controls.sonogramperiod_ms.invalid && (ParametersForm.controls.sonogramperiod_ms.dirty || ParametersForm.controls.sonogramperiod_ms.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.sonogramperiod_ms.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.sonogramperiod_ms.errors.min">
+					Minimum value: 0.001 ms.
+				</div>
+				<div *ngIf="ParametersForm.controls.sonogramperiod_ms.errors.max">
+					Maximum value: 1000 ms.
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="F0_Input">Reference frequency [Hz]</label>
+				<input id="F0_Input" class="form-control" type="text" placeholder="Reference frequency" required formControlName="f0_hz">
+			</div>
+			<div *ngIf="ParametersForm.controls.f0_hz.invalid && (ParametersForm.controls.f0_hz.dirty || ParametersForm.controls.f0_hz.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.f0_hz.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.f0_hz.errors.min">
+					Minimum value: 1e-6 Hz.
+				</div>
+				<div *ngIf="ParametersForm.controls.f0_hz.errors.max">
+					Maximum value: 1e6 Hz.
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="FMIN_Input">Minimum frequency [Hz]</label>
+				<input id="FMIN_Input" class="form-control" type="text" placeholder="Minimum frequency" required formControlName="freqmin_hz">
+			</div>
+			<div *ngIf="ParametersForm.controls.freqmin_hz.invalid && (ParametersForm.controls.freqmin_hz.dirty || ParametersForm.controls.freqmin_hz.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.freqmin_hz.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.freqmin_hz.errors.min">
+					Minimum value: 0.001 Hz.
+				</div>
+				<div *ngIf="ParametersForm.controls.freqmin_hz.errors.max">
+					Maximum value: 1e6 Hz.
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="FMAX_Input">Maximum frequency [Hz]</label>
+				<input id="FMAX_Input" class="form-control" type="text" placeholder="Maximum frequency" required formControlName="freqmax_hz">
+			</div>
+			<div *ngIf="ParametersForm.controls.freqmax_hz.invalid && (ParametersForm.controls.freqmax_hz.dirty || ParametersForm.controls.freqmax_hz.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.freqmax_hz.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.freqmax_hz.errors.min">
+					Minimum value: 0.001 Hz.
+				</div>
+				<div *ngIf="ParametersForm.controls.freqmax_hz.errors.max">
+					Maximum value: 1e6 Hz.
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="CO_Input">Cutoff</label>
+				<input id="CO_Input" class="form-control" type="text" placeholder="Cutoff" required formControlName="cutoff">
+			</div>
+			<div *ngIf="ParametersForm.controls.cutoff.invalid && (ParametersForm.controls.cutoff.dirty || ParametersForm.controls.cutoff.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.cutoff.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.cutoff.errors.min">
+					Minimum value: 0.
+				</div>
+				<div *ngIf="ParametersForm.controls.cutoff.errors.max">
+					Maximum value: 1.
+				</div>
+			</div>
+
+			<div class="col form-group text-center">
+				<label for="SCO_Input">Small cutoff</label>
+				<input id="SCO_Input" class="form-control" type="text" placeholder="Small cutoff" required formControlName="smallcutoff">
+			</div>
+			<div *ngIf="ParametersForm.controls.smallcutoff.invalid && (ParametersForm.controls.smallcutoff.dirty || ParametersForm.controls.smallcutoff.touched)"
+				class="alert alert-danger">
+				<div *ngIf="ParametersForm.controls.smallcutoff.errors.required">
+					This field is required.
+				</div>
+				<div *ngIf="ParametersForm.controls.smallcutoff.errors.min">
+					Minimum value: 0.
+				</div>
+				<div *ngIf="ParametersForm.controls.smallcutoff.errors.max">
+					Maximum value: 1.
+				</div>
+			</div>
+
+		</div>
+	</form>
+</div>

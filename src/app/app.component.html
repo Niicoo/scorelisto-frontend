@@ -1,0 +1,79 @@
+<!-- Navigation bar -->
+<!-- ################################################ -->
+<nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container">
+    <a id="AppName" class="navbar-brand ml-2" href="#">
+      <img id="img_favicon" src="/assets/favicon_nude.svg" width="40" height="40" alt="">
+      <img src="/assets/appname.svg" width="200" height="40" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" data-toggle="collapse" 
+     aria-controls="navbarSupportedContent" aria-label="Toggle navigation" [attr.aria-expanded]="!isCollapsed">
+    <span class="fas fa-bars fa-2x"></span> 
+    </button>
+    <div id="navbarSupportedContent" class="collapse navbar-collapse" [collapse]="isCollapsed">
+      <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-uppercase font-weight-bold" (click)="isCollapsed = true" routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase font-weight-bold" (click)="isCollapsed = true" routerLink="/contact">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase font-weight-bold" (click)="isCollapsed = true" routerLink="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase font-weight-bold" (click)="isCollapsed = true" routerLink="/converter">Converter</a>
+      </li>
+      <li *ngIf="!loggedIn" class="nav-item">
+        <a class="nav-link text-uppercase font-weight-bold" (click)="isCollapsed = true" routerLink="/login">Log In</a>
+      </li>
+
+      <li *ngIf="loggedIn" class="nav-item btn-group" dropdown>
+        <a id="button-basic" dropdownToggle class="dropdown-toggle nav-link text-uppercase font-weight-bold" aria-controls="dropdown-basic">
+          {{username}}<span class="caret" ></span>
+        </a>
+
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item text-uppercase font-weight-bold" (click)="isCollapsed = true" routerLink="/account">My Account</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a class="dropdown-item text-uppercase font-weight-bold" (click)="isCollapsed = true;logout();" routerLink="/home">Sign out</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    </div>
+  </div>
+</nav>
+<!-- ################################################ -->
+
+
+
+<!-- Main page -->
+<!-- ################################################ -->
+<router-outlet></router-outlet>
+<!-- ################################################ -->
+
+
+
+<!--Footer-->
+<!-- ################################################ -->
+<footer>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col">
+          © 2018 Copyright:
+          <a href="https://algolisto.com"> algolisto.com </a>
+      </div>
+      <div class="col text-center">
+          <i class="fa fa-envelope mr-3"></i> <a href="mailto:contact@scorelisto.com">contact@scorelisto.com </a>
+      </div>
+      <div  class="col">
+        <a routerLink="/privacy-policy">Privacy Policy</a>
+        |
+        <a routerLink="/terms-and-conditions">Terms and Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- ################################################ -->
+

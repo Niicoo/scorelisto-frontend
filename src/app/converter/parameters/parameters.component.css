@@ -1,0 +1,120 @@
+/* MAIN WINDOW + NAV BAR */
+#MainDiv {
+	background-color:var(--background-color-secondary);
+	margin-top:3rem;
+	margin-bottom:3rem;
+	margin-left:2rem;
+	margin-right:2rem;
+	padding-bottom:1rem;
+}
+#navbarparameters {
+	background:none;
+	margin-bottom:2rem;
+}
+.nav-link {
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+	cursor:pointer;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.NavParameterSelected {
+	background-color:var(--theme-color-primary);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+}
+
+
+
+
+/* TABLE */
+.col_table {
+	padding-right:1rem;
+	padding-left:1rem;
+}
+table {
+	color:var(--text-color);
+	border:none;
+}
+tbody {
+	display:block;
+	max-height:500px;
+	overflow-y:auto;
+}
+tr {
+	display:table;
+	width:100%;
+	table-layout:fixed;
+}
+td {
+	border:none;
+	cursor: pointer;
+	background:linear-gradient(0deg, var(--background-color-primary), var(--background-color-secondary));
+}
+.SelectedParam {
+	background:linear-gradient(to right, rgba(0,0,0,0.5), var(--background-color-secondary));
+	border-left:1rem solid var(--theme-color-primary);
+	/*border-right:1rem solid var(--theme-color-primary);*/
+	font-weight: bold;
+}
+
+/* SCROLL BAR PARAMETERS */
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,1);
+}
+::-webkit-scrollbar-thumb {
+    background-color:var(--theme-color-primary);
+}
+
+
+
+
+/* BUTTONS */
+.DeleteButtonDisabled {
+}
+#div_btn_add {
+	margin-bottom:1rem;
+}
+.btnaddrm:hover {
+	background:linear-gradient(30deg, var(--theme-color-primary), var(--theme-color-secondary));
+}
+.btnaddrm {
+	color:var(--text-color);
+	border:none;
+	border-radius:2px;
+	margin-top:1rem;
+	background-color:rgba(255,255,255,0.25);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	height:3rem;
+	width:3rem;
+}
+
+
+
+/* PARAMETERS */
+.save_button {
+	color:var(--text-color);
+	background-color:rgba(255,255,255,0.25);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	border:none;
+	border-radius:2px;
+	height:3rem;
+	min-width:8rem;
+}
+.save_button:hover {
+	background:linear-gradient(30deg, var(--theme-color-primary), var(--theme-color-secondary));
+}
+
+
+
+.form-group {
+	max-width:20rem;
+	min-width:13rem;
+}
+.separator_row {
+	height:3px;
+	margin-top:1rem;
+	margin-bottom:1rem;
+	background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,0));
+}

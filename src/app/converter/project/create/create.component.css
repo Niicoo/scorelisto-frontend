@@ -1,0 +1,76 @@
+
+.label_name_instrument {
+	margin-top:2rem;
+	background-color:rgba(0,0,0,0.5);
+	border:2px solid rgba(0,0,0,0.5);
+	font-weight: bold;
+	min-height:4rem;
+	align-content:center;
+}
+
+
+#projectnameInput, #projectinstrumentInput {
+	text-align: center;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:2px solid rgba(0,0,0,0.5);
+	color:var(--theme-color-secondary);
+	font-size:30px;
+	background-color:var(--background-color-secondary);
+	max-width:30rem;
+	margin:2rem;
+}
+
+.collapse-button {
+	min-height:4rem;
+	padding:3px;
+	border:2px solid rgba(0,0,0,0.5);
+	color:var(--text-color);
+	background-color:rgba(0,0,0,0.5);
+	font-weight: bold;
+}
+
+.collapse-button:focus {
+	outline:none;
+}
+
+
+#collapseUpload, #collapseRecord {
+	padding:1rem;
+	background-color:var(--background-color-secondary);
+}
+
+
+
+
+#recording_zone {
+	min-height:15rem;
+	background-color:rgba(0,0,0,0.5);
+	position:relative;
+}
+
+.collapsed {
+	display:none;
+}
+
+
+
+
+#submit_button {
+	margin:2rem;
+	padding:1rem;
+	min-height:4rem;
+	min-width:10rem;
+	border:none;
+	color:var(--text-color);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	background-color:rgba(0,0,0,0.5);
+	cursor:pointer;
+	font-weight: bold;
+
+}
+
+#submit_button:hover {
+	background-color: var(--theme-color-primary);
+}

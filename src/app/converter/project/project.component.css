@@ -1,0 +1,124 @@
+/* HEADER */
+#projectnameInput {
+	text-align: center;
+	border:none;
+	color:var(--text-color);
+	background-color:var(--background-color-primary);
+	margin-top:1rem;
+	font-size:30px;
+}
+#save_button {
+	border:2px solid var(--background-color-primary);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	background-color:rgba(0,0,0,0.5);
+	color:var(--text-color);
+}
+#save_button:hover {
+	background-color:var(--theme-color-primary);
+}
+.HiddenButton {
+	display:none;
+}
+
+
+
+/* GENERAL */
+h3 {
+	text-align:center;
+}
+section {
+	background-color:var(--background-color-secondary);
+	margin-top:2rem;
+	margin-bottom:2rem;
+	padding-bottom:2rem;
+}
+
+/* PROGRESSION */
+.state-row {
+	margin-top:2rem;
+	background-color:rgba(0,0,0,0.5);
+}
+
+.progression-bar {
+	visibility: hidden;
+}
+.ConversionRunning {
+	visibility: visible;
+}
+
+#col-start, #col-pitch, #col-step, #col-rythm {
+	border:1px solid white;
+	min-height:2rem;
+}
+.stateCompleted {
+	background-color:var(--theme-color-primary);
+}
+@keyframes anim_background {
+  0%    { background-color:var(--theme-color-primary); }
+  50%  { background-color:var(--theme-color-secondary); }
+  100%  { background-color:var(--theme-color-primary); }
+}
+.currentState {
+	animation: anim_background 2s linear infinite;
+}
+
+
+
+/* DOWNLOAD SCORE */
+.DownloadExtraButton, .DownloadScoreButton {
+	background-color:rgba(0,0,0,0.5);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	color:var(--text-color);
+	border:none;
+	padding:2rem;
+	margin-top:2rem;
+}
+.DownloadExtraButton {
+	min-height:4rem;
+}
+.DownloadScoreButton {
+	min-height:6rem;
+	min-width:10rem;
+}
+
+
+
+
+/* SCORE OVERVIEW */
+.DivNotReady {
+	margin:1rem;
+	background-color:var(--background-color-secondary);
+}
+.DivNotReady h4 {
+	padding:1rem;
+}
+
+
+
+/* CONVERTER */
+.button_conversion {
+	background-color:rgba(0,0,0,0.5);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	color:var(--text-color);
+	border:none;
+	height:10rem;
+	width:10rem;
+	margin-top:1rem;
+	margin-bottom:1rem;
+}
+#select_direct_parameter {
+	width:10rem;
+
+}
+
+/* DELETE BUTTON */
+#delete_button {
+	color:var(--text-color);
+	margin:1rem;
+	padding:1rem;
+	min-height:3rem;
+	background-color:rgba(0,0,0,0.5);
+	border:1px solid red;
+	box-shadow: 5px 5px 10px red;
+
+}

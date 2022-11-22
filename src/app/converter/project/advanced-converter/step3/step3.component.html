@@ -1,0 +1,57 @@
+<div id="maindiv">
+	<div class="container-fluid">
+		<div class="row">
+
+
+			<!-- Parameter part -->
+			<div id="ParameterDiv" class ="col-3">
+				<div class="row justify-content-center">
+					<h3>Parameters</h3>
+				</div>
+				<div class="row justify-content-center">
+					<select id="sel" (change)="changeParameter($event.target.value)">
+						<option value="-1">Select a parameter</option>
+						<option value="{{param.id}}" *ngFor="let param of ListParameters">{{param.name}}</option>
+					</select>
+				</div>
+				<div class="row justify-content-center">
+					<div class="row separator_row"></div>
+					<div id="RhythmParam">
+						<app-rhythm-parameters></app-rhythm-parameters>
+					</div>
+					<button id="convertButton" type="submit" (click)="onSubmitConversion()" [disabled]="!childParameters.ParametersForm.valid || isConversionRunning">Convert</button>
+				</div>
+			</div>
+
+			<!-- Graphic part -->
+			<div class="col-9">
+				<app-score-printer></app-score-printer>
+				<div id="DownloadButtonsDiv" class="row">
+					<div class="col text-center">
+						<button class="download_button" (click)="download_XML()">Download XML Score</button>
+					</div>
+					<div class="col text-center">
+						<button class="download_button" (click)="download_MIDI()">Download MIDI Score</button>
+					</div>
+					<div class="col text-center">
+						<button class="download_button" (click)="download_MIDI_NORYTHM()">Download MIDI Score (without rhythm)</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row separator_row"></div>
+		<app-progression-bar></app-progression-bar>
+		<div class="row">
+			<div class="col" style="text-align: left;">
+				<button routerLink="/converter/project/{{id_project}}/advanced-converter/step2-stepdetection" id="button_back">< BACK </button>
+			</div>
+			<div class="col" style="text-align: right;">
+				<button routerLink="/converter/project/{{id_project}}" [disabled]="this.project.state < 3" id="button_next">FINISH ></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+

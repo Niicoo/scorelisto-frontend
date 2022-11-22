@@ -1,0 +1,39 @@
+.submitButton {
+	margin:2rem;
+	padding:1rem;
+	min-height:4rem;
+	min-width:10rem;
+	border:none;
+	color:var(--text-color);
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	background-color:rgba(0,0,0,0.5);
+	cursor:pointer;
+	font-weight: bold;
+
+}
+
+.submitButton:hover {
+	background-color: var(--theme-color-primary);
+}
+
+.title_section {
+	margin-top:2rem;
+	background-color:rgba(0,0,0,0.5);
+	border:2px solid rgba(0,0,0,0.5);
+	font-weight: bold;
+	min-height:4rem;
+	align-content:center;
+}
+
+input {
+	text-align: center;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom:2px solid rgba(0,0,0,0.5);
+	color:var(--theme-color-secondary);
+	font-size:30px;
+	background-color:var(--background-color-secondary);
+	max-width:30rem;
+	margin:2rem;
+}

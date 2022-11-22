@@ -1,0 +1,26 @@
+#questions {
+	margin-top:3rem;
+}
+#team {
+	margin-top:5rem;
+	margin-bottom:3rem;
+}
+
+.team-member {
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	background-color:var(--background-color-secondary);
+	text-align: center;
+	width:360px;
+	margin: 0 auto;
+	margin-bottom:20px;
+}
+
+#TeamTitle {
+	margin-bottom:2rem;
+}
+
+.team-member img {
+  width: 320px;
+  height: 320px;
+  padding-top:20px;
+}

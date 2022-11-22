@@ -1,0 +1,112 @@
+<!-- Download section -->
+<header>
+  <div class="container-fluid">
+    <div id="title" class="text-center font-weight-bold">
+      <h1>WAV to MIDI / MUSIC XML CONVERTER</h1>
+    </div>
+    <div id="global">
+      <div id="slideshow-div" class="row">
+        <div id="slideshow-left" class="col">
+          <img id="slideshow-left-content" src="/assets/img/score.svg" height="100" width="1000" alt="">
+        </div>
+        <div id="slideshow-right"class="col">
+          <img id="slideshow-right-content" src="/assets/img/waveform.svg" height="100" width="1000"alt="">
+        </div>
+      </div>
+      <div id="microphone-div">
+        <div id="microphone-img"></div>
+      </div>
+    </div>
+  </div>
+</header> 
+
+
+
+
+
+<section id="converter-section" class="container-fluid pr-0 pl-0">
+  <form [formGroup]="FreeConverterForm">
+    
+    <!-- Upload sound from computer -->
+    <button class="container-fluid collapse-button" (click)="clickOnUpload()">
+      <img src="/assets/img/upload_white.svg" height="30" width="30">
+      UPLOAD FROM COMPUTER
+    </button>
+
+    <div id="collapseUpload" [class.collapsed]="isUploadCollapsed">
+        <app-file-input></app-file-input>
+    </div>
+
+    <!-- Record sound online -->
+    <button  class="container-fluid collapse-button" type="button" (click)="clickOnRecord()">
+      <img src="/assets/img/record_white.svg" height="30" width="30">
+      ONLINE RECORDING
+    </button>
+    <div id="collapseRecord" [class.collapsed]="isRecordCollapsed">
+      <app-recorder></app-recorder>
+    </div>
+
+    <!-- Project instrument -->
+    <div id="label_email" class="row justify-content-center">
+      YOUR EMAIL ADRESS
+    </div>
+    <div class="row form-group justify-content-center">
+      <input id="emailInput" class="form-control" type="text" placeholder="Enter email" required formControlName="email">
+    </div>
+
+    <!-- Button convert -->
+    <div class="row justify-content-center">
+      <button id="ButtonConvert" class="btn" type="submit" [disabled]="!FreeConverterForm.valid || (selectedFile === null)" (click)="onSubmitFreeConversion()">CONVERT NOW ></button>
+    </div>
+
+  </form>
+</section>
+
+
+<!-- Progression -->
+<div class="progression-bar container" [class.ConversionRunning]="isConversionRunning">
+  <app-progression-bar></app-progression-bar>
+</div>
+
+<!-- Status -->
+<h3 class="text-center" *ngIf="isConversionSuccess" style="font-weight: bold;color:green;">
+  The score has been sent to your email adress, check your inbox !
+</h3>
+<h3 class="text-center" *ngIf="isConversionError" style="font-weight: bold;color:red;">
+  An error occured during the conversion of your audio file.
+  Check the quality of the recording or try again later.
+</h3>
+
+
+
+<!-- showcase -->
+<section id="showcase-footer">
+  <div class="container">
+    <div class="row">
+      <div class="showcase-item col-xs-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="showcase-content text-center p-0">
+          <div id="image_instrument" class="showcase-item-img"></div>
+          <h4>Works with every instruments</h4>
+        </div>
+      </div>
+      <div class="showcase-item col-xs-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="showcase-content text-center p-0">
+          <div id="image_format" class="showcase-item-img"></div>
+          <h4>MusicXML and Midi Format</h4>          
+        </div>
+      </div>
+      <div class="showcase-item col-xs-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="showcase-content text-center p-0">
+          <div id="image_bpm" class="showcase-item-img"></div>
+          <h4>Automatic BPM detection</h4>
+        </div>
+      </div>
+      <div class="showcase-item col-xs-12 col-sm-6 col-md-6 col-lg-3">
+        <div class="showcase-content text-center p-0">
+          <div id="image_parameters" class="showcase-item-img"></div>
+          <h4>Customizable parameters</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

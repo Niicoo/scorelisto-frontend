@@ -1,0 +1,9 @@
+<div id="upload_div" class="row justify-content-center ml-3 mr-3">
+    <div id="FormGroup" class="col-12 col-xs-8 col-sm-10 col-md-6 col-lg-6 form-group text-center">
+      <input id="WavFileInput" #file type="file" (change)="onFileChange($event)">
+      <label id="InputLabel" for="WavFileInput" class="text-center"> 
+        <i class="fas fa-download fa-3x"></i>
+        <br>Select a wav file
+      </label>
+    </div>
+</div>

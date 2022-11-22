@@ -1,0 +1,94 @@
+/* Box buttons */
+
+#BoxSection {
+	margin-top:5rem;
+	margin-bottom:5rem;
+}
+.choicebox {
+    margin: 0 auto;
+	width:8rem;
+	height:8rem;
+    align-items: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+	box-shadow: 5px 5px 10px rgba(0,0,0,1);
+	background-color:var(--background-color-secondary);
+}
+
+.choicebox i{
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	z-index: 10;
+}
+
+.choicebox:hover {
+	box-shadow: 3px 3px 7px var(--theme-color-primary);
+}
+.choicebox:hover > i {
+	color:var(--theme-color-primary);
+}
+
+
+ /*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	.choicebox {
+		width:14rem;
+		height:14rem;
+	}
+}
+
+#BackGroundNewProject,#BackGroundParmeters{
+	background-size: contain;
+	opacity:0.5;
+    width:100%;
+    height:100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+}
+
+#BackGroundNewProject{
+    background-image:url('/assets/favicon_nude.svg');
+}
+
+#BackGroundParmeters{
+    background-image:url('/assets/tune.svg');
+}
+
+
+
+
+/* Table of projects */
+th, td {
+	color:var(--text-color);
+}
+
+thead > tr {
+	background-color:rgba(0,0,0,0.75);
+}
+
+.tr-even:hover,.tr-odd:hover {
+	cursor: pointer;
+	background:linear-gradient(30deg, var(--theme-color-primary), var(--theme-color-secondary));
+}
+
+section {
+	margin-bottom:3rem;
+}
+
+#TableEmpty {
+	position:relative;
+	height:10rem;
+	width:100%;
+	background-color:var(--background-color-secondary);
+}
+#TableEmpty div {
+	position:absolute;
+	top:40%;
+	left:0;
+	width:100%;
+	height:100%;
+}

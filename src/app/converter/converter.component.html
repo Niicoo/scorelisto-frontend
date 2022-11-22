@@ -1,0 +1,55 @@
+<div id="BoxSection" class="container">
+	<div class="row justify-content-center">
+
+		<div class="col">
+			<h3 class="text-center">New Project</h3>
+			<a type="button" class="choicebox text-center" routerLink="project/create">
+				<div id="BackGroundNewProject"></div>
+				<i class="fas fa-plus fa-5x"></i>
+			</a>
+		</div>
+
+		<div class="col">
+			<h3 class="text-center">Edit Parameters</h3>
+			<a type="button" class="choicebox text-center" routerLink="/converter/parameters">
+				<div id="BackGroundParmeters"></div>
+				<i class="fas fa-cog fa-5x"></i>
+			</a>
+		</div>
+
+	</div>
+</div>
+
+
+<section id="TableSection" class="container">
+  <div class="text-center mb-4">
+    <h2 class="font-weight-bold">SAVED SOUNDS</h2>
+  </div>
+  <div class="table-responsive-md">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">PROJECT NAME</th>
+          <th scope="col">INSTRUMENT</th>
+          <th scope="col">DATE CREATED</th>
+          <th scope="col">STATE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tr-even" *ngFor="let project of ListOfProjects">
+          <th scope="row" routerLink="project/{{project.id}}">{{project.name}}</th>
+          <td routerLink="project/{{project.id}}">{{project.instrument}}</td>
+          <td routerLink="project/{{project.id}}">{{project.date_created}}</td>
+
+          <td *ngIf="project.state == 0" routerLink="project/{{project.id}}">0/3 => Sound uploaded</td>
+          <td *ngIf="project.state == 1" routerLink="project/{{project.id}}">1/3 => Pitch converted</td>
+          <td *ngIf="project.state == 2" routerLink="project/{{project.id}}">2/3 => Step detected</td>
+          <td *ngIf="project.state == 3" routerLink="project/{{project.id}}">3/3 => Finished</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="TableEmpty" class="text-center" *ngIf="ListOfProjectsEmpty">
+        <div>List of projects empty</div>
+    </div>
+  </div>
+</section>

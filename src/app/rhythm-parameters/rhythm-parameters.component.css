@@ -1,0 +1,209 @@
+.combination_title {
+	margin-top:1rem;
+}
+
+.separator_row {
+	height:3px;
+	margin-top:1rem;
+	margin-bottom:1rem;
+	background:linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.form-group {
+	max-width:20rem;
+	min-width:13rem;
+}
+
+/*12 + 3 checkbox + 4 text + 5 image*/
+/* .form-check:width = .form-check:padding-left +  .form-check-label:width + .img_note:max-width*/
+/* 20 = 3 + 10 + 7*/
+.form-check {
+	width:20rem;
+	padding-left:3rem;
+}
+.form-check-label {
+	width:15rem;
+}
+.form-check-input {
+	margin-top:0;
+	margin-bottom:0;
+	margin-right:0;
+	margin-left:-2.5rem;
+	height:100%;
+	width:2rem;
+}
+.form-check-label {
+	background-repeat: no-repeat;
+	background-size: contain;
+	filter:invert(100%);
+	height:5rem;
+}
+
+
+#img_onenoteonebeat {
+	background-image:url("/assets/img/notes/onenoteonebeat_128.png");
+}
+#img_onenotetwobeat {
+	background-image:url("/assets/img/notes/onenotetwobeat_128.png");
+}
+#img_onenotethreebeat {
+	background-image:url("/assets/img/notes/onenotethreebeat_128.png");
+}
+#img_onenotefourbeat {
+	background-image:url("/assets/img/notes/onenotefourbeat_128.png");
+}
+#img_onenotefivebeat {
+	background-image:url("/assets/img/notes/onenotefivebeat_128.png");
+}
+#img_onenotesixbeat {
+	background-image:url("/assets/img/notes/onenotesixbeat_128.png");
+}
+#img_onenotesevenbeat {
+	background-image:url("/assets/img/notes/onenotesevenbeat_128.png");
+}
+#img_onenoteeightbeat {
+	background-image:url("/assets/img/notes/onenoteeightbeat_128.png");
+}
+#img_onerestonebeat {
+	background-image:url("/assets/img/notes/onerestonebeat_128.png");
+}
+#img_oneresttwobeat {
+	background-image:url("/assets/img/notes/oneresttwobeat_128.png");
+}
+#img_onerestthreebeat {
+	background-image:url("/assets/img/notes/onerestthreebeat_128.png");
+}
+#img_onerestfourbeat {
+	background-image:url("/assets/img/notes/onerestfourbeat_128.png");
+}
+#img_onerestfivebeat {
+	background-image:url("/assets/img/notes/onerestfivebeat_128.png");
+}
+#img_onerestsixbeat {
+	background-image:url("/assets/img/notes/onerestsixbeat_128.png");
+}
+#img_onerestsevenbeat {
+	background-image:url("/assets/img/notes/onerestsevenbeat_128.png");
+}
+#img_oneresteightbeat {
+	background-image:url("/assets/img/notes/oneresteightbeat_128.png");
+}
+
+/* 2 NOTES 1 BEAT */
+#img_en_en {
+	background-image:url("/assets/img/notes/en_en_128.png");
+}
+#img_er_en {
+	background-image:url("/assets/img/notes/er_en_128.png");
+}
+#img_en_er {
+	background-image:url("/assets/img/notes/en_er_128.png");
+}
+#img_den_sn {
+	background-image:url("/assets/img/notes/den_sn_128.png");
+}
+#img_sn_den {
+	background-image:url("/assets/img/notes/sn_den_128.png");
+}
+
+/* 2 NOTES 2 BEATs */
+#img_dqn_en {
+	background-image:url("/assets/img/notes/dqn_en_128.png");
+}
+#img_qr_er_en {
+	background-image:url("/assets/img/notes/qr_er_en_128.png");
+}
+#img_dqn_er {
+	background-image:url("/assets/img/notes/dqn_er_128.png");
+}
+#img_en_en_qn {
+	background-image:url("/assets/img/notes/en_en_qn_128.png");
+}
+
+/* 2 NOTES 3 BEATs */
+#img_qn_dqn_en {
+	background-image:url("/assets/img/notes/qn_dqn_en_128.png");
+}
+#img_qr_qr_er_en {
+	background-image:url("/assets/img/notes/qr_qr_er_en_128.png");
+}
+#img_qn_dqn_er {
+	background-image:url("/assets/img/notes/qn_dqn_er_128.png");
+}
+#img_en_en_hn {
+	background-image:url("/assets/img/notes/en_en_hn_128.png");
+}
+
+/* 2 NOTES 4 BEATs */
+#img_hn_dqn_en {
+	background-image:url("/assets/img/notes/hn_dqn_en_128.png");
+}
+#img_qr_qr_qr_er_en {
+	background-image:url("/assets/img/notes/qr_qr_qr_er_en_128.png");
+}
+#img_hn_dqn_er {
+	background-image:url("/assets/img/notes/hn_dqn_er_128.png");
+}
+#img_en_en_dhn {
+	background-image:url("/assets/img/notes/en_en_dhn_128.png");
+}
+
+/* 3 NOTES 1 BEAT */
+#img_en_sn_sn {
+	background-image:url("/assets/img/notes/en_sn_sn_128.png");
+}
+#img_er_sn_sn {
+	background-image:url("/assets/img/notes/er_sn_sn_128.png");
+}
+#img_sn_sn_en {
+	background-image:url("/assets/img/notes/sn_sn_en_128.png");
+}
+#img_sn_sn_er {
+	background-image:url("/assets/img/notes/sn_sn_er_128.png");
+}
+#img_sn_en_sn {
+	background-image:url("/assets/img/notes/sn_en_sn_128.png");
+}
+#img_t_en_en_en {
+	background-image:url("/assets/img/notes/t_en_en_en_128.png");
+}
+#img_t_en_den_sn {
+	background-image:url("/assets/img/notes/t_en_den_sn_128.png");
+}
+#img_t_en_sn_den {
+	background-image:url("/assets/img/notes/t_en_sn_den_128.png");
+}
+#img_t_sn_en_den {
+	background-image:url("/assets/img/notes/t_sn_en_den_128.png");
+}
+#img_t_sn_den_en {
+	background-image:url("/assets/img/notes/t_sn_den_en_128.png");
+}
+#img_t_den_en_sn {
+	background-image:url("/assets/img/notes/t_den_en_sn_128.png");
+}
+#img_t_den_sn_en {
+	background-image:url("/assets/img/notes/t_den_sn_en_128.png");
+}
+
+/* 3 NOTES 2 BEAT */
+#img_en_qn_en {
+	background-image:url("/assets/img/notes/en_qn_en_128.png");
+}
+#img_dqn_sn_sn {
+	background-image:url("/assets/img/notes/dqn_sn_sn_128.png");
+}
+
+/* 3 NOTES 3 BEAT */
+#img_qn_dqn_sn_sn {
+	background-image:url("/assets/img/notes/qn_dqn_sn_sn_128.png");
+}
+
+/* 3 NOTES 3 BEAT */
+#img_hn_dqn_sn_sn {
+	background-image:url("/assets/img/notes/hn_dqn_sn_sn_128.png");
+}
+
+/* 4 NOTES 1 BEAT */
+#img_sn_sn_sn_sn {
+	background-image:url("/assets/img/notes/sn_sn_sn_sn_128.png");
+}

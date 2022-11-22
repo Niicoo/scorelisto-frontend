@@ -1,0 +1,83 @@
+
+
+<section class="container-fluid pr-0 pl-0">
+	<form [formGroup]="CreateNewProjectForm">
+
+		<!-- Project name -->
+		<div class="row label_name_instrument justify-content-center">
+			NAME
+		</div>
+		<div class="row form-group justify-content-center">
+			<input id="projectnameInput" class="form-control" type="text" placeholder="Enter name" required formControlName="name">
+		</div>
+
+		<div *ngIf="CreateNewProjectForm.controls.name.invalid && (CreateNewProjectForm.controls.name.dirty || CreateNewProjectForm.controls.name.touched)"
+			class="alert alert-danger">
+			<div *ngIf="CreateNewProjectForm.controls.name.errors.required">
+				Name is required.
+			</div>
+			<div *ngIf="CreateNewProjectForm.controls.name.errors.pattern">
+				Name must be between 4 and 32 characters long. Only letters, numbers and whitespaces. Cannot start of end with whitespaces.
+			</div>
+		</div>
+
+
+		<!-- Project instrument -->
+		<div class="row label_name_instrument justify-content-center">
+			INSTRUMENT
+		</div>
+		<div class="row form-group justify-content-center">
+			<input id="projectinstrumentInput" class="form-control" type="text" placeholder="Enter instrument" required formControlName="instrument">
+		</div>
+
+		<div *ngIf="CreateNewProjectForm.controls.instrument.invalid && (CreateNewProjectForm.controls.instrument.dirty || CreateNewProjectForm.controls.instrument.touched)"
+			class="alert alert-danger">
+			<div *ngIf="CreateNewProjectForm.controls.instrument.errors.required">
+				Instrument is required.
+			</div>
+			<div *ngIf="CreateNewProjectForm.controls.instrument.errors.pattern">
+				Instrument must be between 4 and 32 characters long. Only letters, numbers and whitespaces. Cannot start of end with whitespaces.
+			</div>
+		</div>
+
+
+	    <!-- Upload sound from computer -->
+	    <button class="container-fluid collapse-button" (click)="clickOnUpload()">
+	      <img src="/assets/img/upload_white.svg" height="30" width="30">
+	      UPLOAD FROM COMPUTER
+	    </button>
+
+	    <div id="collapseUpload" [class.collapsed]="isUploadCollapsed">
+	    	<app-file-input></app-file-input>
+	    </div>
+
+	    <!-- Record sound online -->
+	    <button  class="container-fluid collapse-button" type="button" (click)="clickOnRecord()">
+	      <img src="/assets/img/record_white.svg" height="30" width="30">
+	      ONLINE RECORDING
+	    </button>
+	    <div id="collapseRecord" [class.collapsed]="isRecordCollapsed">
+	        <app-recorder></app-recorder>
+	    </div>
+
+	    <div class="row justify-content-center">
+			<button id="submit_button" type="submit" [disabled]="!CreateNewProjectForm.valid || (selectedFile === null)" (click)="onSubmitCreateProject()">CREATE !</button>
+		</div>
+	</form>
+</section>
+
+
+
+<!-- Record sound online -->
+<!-- <div (click)="clickOnRecorder()">
+	<button type="button" (click)="resetRecording()" [disabled]="!isUsingrecorder">Reset recording</button> 
+	<button type="button" (click)="startRecording()" [disabled]="isRecording || !isUsingrecorder">Start recording</button> 
+	<button type="button" (click)="stopRecording()" [disabled]="!isRecording || !isUsingrecorder">Stop recording</button> 
+	<button type="button" (click)="save()" [disabled]="isRecording || !isUsingrecorder || !isSoundReady">Save</button> 
+	<button type="button" (click)="download()" [disabled]="isRecording || !isUsingrecorder || !isSoundReady">Download</button> 
+</div> -->
+
+<!-- Upload a local sound -->
+<!-- <div class="form-group">
+	<input type="file" class="form-control" (change)="onSelectFile($event)" >
+</div> -->

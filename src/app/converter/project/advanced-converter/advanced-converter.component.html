@@ -1,0 +1,15 @@
+<div id="MainDiv" class="container-fluid">
+	<div id="StepSelector"class="row">
+		<div id="col_pitch" class="col-4 step text-center" routerLink="step1-pitchdetection" routerLinkActive="currentStep">
+			<span>1</span>
+		</div>
+		<div id="col_step" class="col-4 step text-center" routerLink="step2-stepdetection" routerLinkActive="currentStep">
+			<span>2</span>
+		</div>
+		<div id="col_rythm" class="col-4 step text-center" routerLink="step3-rythmdetection" routerLinkActive="currentStep">
+			<span>3</span>
+		</div>
+	</div>
+</div>
+
+<router-outlet></router-outlet>

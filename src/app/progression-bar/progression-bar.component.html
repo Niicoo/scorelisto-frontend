@@ -1,0 +1,18 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			Step: {{task.mainstepname}}
+		</div>
+		<div class="col-12">
+			Sub step: {{task.substepname}}
+		</div>
+	</div>
+	<div class="row">
+		<progressbar [value]="task.progression" max="{{task.total}}">{{task.progression}}/{{task.total}}</progressbar>
+	</div>
+	<div class="row">
+		<div class="col-12 mt-2" style="text-align: justify;text-align-last: right;">
+			STATUS: <span [class.statusError]="task.status == 'FAILURE'" [class.statusSuccess]="task.status == 'SUCCESS'"> {{task.status}}</span>
+		</div>
+	</div>
+</div>
